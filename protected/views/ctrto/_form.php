@@ -105,7 +105,7 @@
         
 	<div class="row">
 		<?php echo $form->labelEx($model,'mnto'); ?>
-		<?php echo $form->textField($model,'mnto'); ?>
+		<?php echo $form->textField($model,'mnto',array('size'=>12)); ?>
 		<?php echo $form->error($model,'mnto'); ?>
 	</div>
 
@@ -207,13 +207,13 @@
 		<?php echo $form->labelEx($model,'mneda_pago'); ?>
 		<?php //echo $form->textField($model,'mneda_pago',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->dropDownList($model,'mneda_pago', 
-                        CHtml::listData($arr_monedas, 'mneda_pago', 'descripcion'), array('prompt' => 'Seleccione...')  ); ?>
+                        CHtml::listData($arr_monedas, 'moneda', 'descripcion'), array('prompt' => 'Seleccione...')  ); ?>
                 <?php echo $form->error($model,'mneda_pago'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'mnto_pago'); ?>
-		<?php echo $form->textField($model,'mnto_pago'); ?>
+		<?php echo $form->textField($model,'mnto_pago',array('size'=>12)); ?>
 		<?php echo $form->error($model,'mnto_pago'); ?>
 	</div>
 
