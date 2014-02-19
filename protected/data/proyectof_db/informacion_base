@@ -1,0 +1,175 @@
+
+Contrato 
+---------------
+codigo del contrato
+% incremento
+frecuencia de pago
+nº de contrato
+monto del contrato
+fecha inicio contrato
+fecha fin contrato
+estatus del contrato (condicion)
+forma de pago
+tipo de moneda
+monto 
+figura juridica (empresa/cooperativa)
+razon social
+codigo del proveedor
+observaciones
+
+
+tabla de asociacion de contratos/presupuestos
+----------------------
+codigo del contrato
+codigo del presupuesto
+
+
+Presupuesto 
+-------------
+codigo de presupuesto
+onapre
+ceco
+tipo presupuesto
+clase remo
+clase de costo
+actividad ( tipo de actividad )
+forma de pago
+moneda presupuestada
+moneda de pago
+descripcion de la actividad (Descripción Contrato/Iniciativa)
+prioridad (baja/media/alta)
+
+
+presupuesto mensual planificado (debe guardar el historico cuando se modifique un mes)
+--------------------
+codigo presupuesto mensual
+codigo de presupuesto
+enero (monto)
+febrero
+marzo
+abril
+mayo
+junio
+julio
+agosto
+septiembre
+octubre
+noviembre
+diciembre
+total
+version
+
+
+presupuesto formulado (debe guardar el historico cuando se modifique un mes)
+--------------------
+codigo presupuesto formulada
+codigo presupuesto mensual
+codigo de preupuesto
+enero (monto)
+febrero
+marzo
+abril
+mayo
+junio
+julio
+agosto
+septiembre
+octubre
+noviembre
+diciembre
+total
+version
+% variable macroeconomica
+
+
+tabla criterios montos
+------------------------------
+iva
+dolar 
+unidad tributaria
+% variable macroeconomica
+
+
+plan de compras (asociado a un presupuesto)
+-----------------
+codigo de presupuesto
+actividad plan de compra (bien/servicio)
+unidad de medida (tabla de unidades de medida)
+codigo sap (tabla de codigos sap)
+familia
+cantidad enero (monto cantidades)
+febrero
+marzo
+abril
+mayo
+junio
+julio
+agosto
+septiembre
+octubre
+noviembre
+diciembre
+total
+version
+nombre responsable
+telefono responsable
+correo responsable
+
+
+sociedad
+----------
+codigo sociedad
+nombre
+descripcion
+
+
+tipo de actividad (actividad)
+----------------
+codigo actividad
+nombre
+descripcion
+
+
+clase remo
+--------
+codigo clase remo
+nombre
+descripcion
+
+
+ceco
+--------------
+codigo ceco
+CeCo	
+Gerencia 1er. Nivel	
+Gerencia 2do. Nivel	
+Estados
+
+
+clase costo
+--------
+codigo clase costo
+nombre
+descripcion
+
+
+tipo presupuesto (Gasto a Presupuestar)
+--------
+codigo tipo presupuesto
+nombre
+descripcion
+
+
+onapre
+---------
+codigo onapre
+mapping onapre
+accion especifica
+poai
+
+
+familia
+--------------
+codigo
+Descripción de la Familia
+
