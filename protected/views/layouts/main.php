@@ -23,7 +23,7 @@
 <div class="container" id="page" >
 
         <div>
-            <img src="../../../sisgefi/images/cabecera_gobenlinea.gif" style="width: 900px" />
+            <img src="http://sapportal.cantv.com.ve/irj/portalapps/com.cantv.portal.runtime.logon.vnw/layout/cabezal_bolivariano200v3.gif" style="width: 950px" />
         </div>
 	<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
@@ -32,6 +32,8 @@
 	<div id="">
 		            
             <?php 
+            
+            if(!Yii::app()->user->isGuest){
 
                 $this->widget('application.extensions.mbmenu.MbMenu',
                     array(
@@ -73,12 +75,12 @@
                                     array('label'=>'Contacto', 'url'=>array('/site/contact')),
                                 ),
                             ),
-                            array('label'=>'Ingresar', 'url'=>Yii::app()->user->ui->loginUrl, 'visible'=>Yii::app()->user->isGuest),
+                            array('label'=>'Ingresar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                             array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>Yii::app()->user->ui->logoutUrl, 'visible'=>!Yii::app()->user->isGuest),
                         ),
                     )
                 );
-
+            }
             ?>
             
 	</div><!-- mainmenu -->

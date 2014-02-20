@@ -33,7 +33,10 @@ class SiteController extends Controller
                 //$model=new IndexFrom;
 		//$this->render('index',array('model'=>$model));
                 
-		$this->render('index');
+                if(!Yii::app()->user->isGuest)
+                    $this->render('index');
+                else
+                    $this->actionLogin ();
 	}
 
 	/**
@@ -41,6 +44,10 @@ class SiteController extends Controller
 	 */
 	public function actionError()
 	{
+            if(Yii::app()->user->isGuest){
+                    $this->actionLogin (); die();
+            }
+            
 		if($error=Yii::app()->errorHandler->error)
 		{
 			if(Yii::app()->request->isAjaxRequest)
@@ -55,7 +62,11 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
-		$model=new ContactForm;
+		if(Yii::app()->user->isGuest){
+                        $this->actionLogin (); die();
+                }
+            
+                $model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];

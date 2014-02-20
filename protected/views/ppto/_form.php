@@ -30,6 +30,17 @@
                     array('prioridad'=>'Alta', 'descripcion'=>'Alta'),
                 
                 );
+       
+       //Arreglo para campo frma_pago y fcia_aumto (FORMA DE PAGO y FRECUENCIA DE AUMENTO)
+       $arr_frma_pago = array(
+                    array('frma_pago'=>'Mensual', 'descripcion'=>'Mensual'), 
+                    array('frma_pago'=>'Bimensual', 'descripcion'=>'Bimensual'), 
+                    array('frma_pago'=>'Trimestral', 'descripcion'=>'Trimestral'), 
+                    array('frma_pago'=>'Semestral', 'descripcion'=>'Semestral'), 
+                    array('frma_pago'=>'Anual', 'descripcion'=>'Anual'), 
+                    array('frma_pago'=>'Plurianual', 'descripcion'=>'Plurianual'),
+           );
+       
 ?>
 
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
@@ -94,8 +105,10 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'frma_pago'); ?>
-		<?php echo $form->textField($model,'frma_pago',array('size'=>30,'maxlength'=>30)); ?>
-		<?php echo $form->error($model,'frma_pago'); ?>
+		<?php //echo $form->textField($model,'frma_pago',array('size'=>30,'maxlength'=>30)); ?>
+		<?php echo $form->dropDownList($model,'frma_pago', 
+                        CHtml::listData($arr_frma_pago, 'frma_pago', 'descripcion'), array('prompt' => 'Seleccione...') ); ?>
+                <?php echo $form->error($model,'frma_pago'); ?>
 	</div>
 
 	<div class="row">
@@ -117,7 +130,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'dscpcion'); ?>
 		<?php //echo $form->textField($model,'dscpcion',array('size'=>60,'maxlength'=>250)); ?>
-		<?php echo $form->textArea($model,'dscpcion',array('cols'=>45, 'rows'=>10, 'size'=>250,'maxlength'=>250)); ?>
+		<?php echo $form->textArea($model,'dscpcion',array('cols'=>45, 'rows'=>10, 'size'=>600,'maxlength'=>600)); ?>
 		<?php echo $form->error($model,'dscpcion'); ?>
 	</div>
 

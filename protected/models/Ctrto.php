@@ -52,12 +52,18 @@ class Ctrto extends CActiveRecord
 			array('nb_socd, fe_inicio, in_stat_ctrto, fgra_jrdca, rzon_scial', 'required'),
 			array('co_ctrto, por_incrto', 'numerical', 'integerOnly'=>true),
 			array('nro_ctrto, in_stat_ctrto, frma_pago, fgra_jrdca, co_pvdr', 'length', 'max'=>30),
-			array('nb_socd, fcia_aumto, mnto, mneda_pago, mnto_pago, usr_crea, usr_modf', 'length', 'max'=>10),
+			array('nb_socd, fcia_aumto, mneda_pago, usr_crea, usr_modf', 'length', 'max'=>10),
+			array('mnto, mnto_pago', 'length', 'max'=>14),
 			array('rzon_scial', 'length', 'max'=>50),
                         array('observaciones', 'length', 'max'=>300),
                         array('in_stat', 'length', 'max'=>1),
 			array('tx_desc', 'length', 'max'=>100),
                         array('fe_fin, fe_crea, fe_modf', 'safe'),
+                    
+                        //comparacion de montos
+                        array('mnto_pago','compare','compareAttribute'=>'mnto','operator'=>'<=',
+                            'message'=>'El Monto 2 debe ser un numero menor o igual al monto 1'),
+
                     
                         //Valida foreing key
                         array('nb_socd', 'exist',

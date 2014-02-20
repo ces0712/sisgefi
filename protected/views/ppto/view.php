@@ -56,7 +56,7 @@ $this->menu=array(
 		'usr_crea',
 		'usr_modf',
 		//'in_stat',
-		'tx_desc',
+		//'tx_desc',
 	),
 )); ?>
 

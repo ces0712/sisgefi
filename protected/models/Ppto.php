@@ -57,7 +57,7 @@ class Ppto extends CActiveRecord
 			array('co_ppto', 'numerical', 'integerOnly'=>true),
 			array('nb_ceco, nb_tpo_ppto, nb_cls_remo, nb_cls_csto, nb_actvd, frma_pago, mneda_ppto, mneda_pago', 'length', 'max'=>30),
 			array('mpp_onpe', 'length', 'max'=>60),
-			array('dscpcion', 'length', 'max'=>250),
+			array('dscpcion', 'length', 'max'=>600),
 			array('priodd', 'length', 'max'=>5),
 			array('usr_crea, usr_modf', 'length', 'max'=>10),
 			array('in_stat', 'length', 'max'=>1),
