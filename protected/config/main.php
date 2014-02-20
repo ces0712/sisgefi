@@ -19,7 +19,6 @@ return array(
                 'application.modules.cruge.components.*',
 		'application.modules.cruge.extensions.crugemailer.*',
                 'application.extensions.moneymask.*',
-                'application.extensions.CEditableGridView02.*'
 	),
 
 	'modules'=>array(
@@ -27,7 +26,7 @@ return array(
 		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'sisgefiCantv2014.A',
+			'password'=>'gorCantv2014.A',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -46,19 +45,19 @@ return array(
                         'availableAuthModes'=>array('username','email'),
 
                         // url base para los links de activacion de cuenta de usuario
-                        'baseUrl'=>'http://sisgefi.cantv.com.ve/',
+                        'baseUrl'=>'http://gor.cantv.com.ve/',
 
                          // NO OLVIDES PONER EN FALSE TRAS INSTALAR
-                         'debug'=>false,
-                         'rbacSetupEnabled'=>false,
-                         'allowUserAlways'=>false,
+                         'debug'=>true,
+                         'rbacSetupEnabled'=>true,
+                         'allowUserAlways'=>true,
 
                         // MIENTRAS INSTALAS..PONLO EN: false
                         // lee mas abajo respecto a 'Encriptando las claves'
                         //
                         'useEncryptedPassword' => true,
 
-                        // Alsisgefiitmo de la función hash que deseas usar
+                        // Algoritmo de la función hash que deseas usar
                         // Los valores admitidos están en: http://www.php.net/manual/en/function.hash-algos.php
                         'hash' => 'md5',
 
@@ -71,9 +70,9 @@ return array(
                         //		'afterLoginUrl'=>array('/site/welcome'),  ( !!! no olvidar el slash inicial / )
                         //		'afterLogoutUrl'=>array('/site/page','view'=>'about'),
                         //
-                        'afterLoginUrl'=>array('/site','view'=>'index'),
-                        'afterLogoutUrl'=>array('/site/page','view'=>'about'),
-                        'afterSessionExpiredUrl'=>array('/site','view'=>'index'),
+                        'afterLoginUrl'=>array('/site/index'),
+                        'afterLogoutUrl'=>array('/site/login'),
+                        'afterSessionExpiredUrl'=>null,
 
                         // manejo del layout con cruge.
                         //
@@ -165,7 +164,7 @@ return array(
                 'crugemailer'=>array(
                         'class' => 'application.modules.cruge.components.CrugeMailer',
                         'mailfrom' => 'cislibre@cantv.com.ve',
-                        'subjectprefix' => 'sisgefi - ',
+                        'subjectprefix' => 'SISGEFI - ',
                         'debug' => true,
                 ),
                 'format' => array(
@@ -185,7 +184,7 @@ return array(
         
         'language'=>'es', // Este es el lenguaje en el que quieres que muestre las cosas
 	'sourceLanguage'=>'en', // Este es el lenguaje por defecto de los archivos
-	'defaultController'=>'site/index', // Vista por defecto
+	'defaultController'=>'site/login', // Vista por defecto
     
     
     
